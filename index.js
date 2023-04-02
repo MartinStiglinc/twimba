@@ -1,11 +1,11 @@
 import { tweetsData } from './data.js'
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
 
-/* const tweetsFromLocalStorage = JSON.parse( localStorage.getItem("tweetsLocalStorage") )
+const tweetsFromLocalStorage = JSON.parse( localStorage.getItem("tweetsData") )
 
 if (tweetsFromLocalStorage) {
     tweetsData = tweetsFromLocalStorage
-} */
+} 
 
 
 document.addEventListener('click', function(e){
@@ -38,9 +38,12 @@ function handleLikeClick(tweetId){
         targetTweetObj.likes++ 
     }
     targetTweetObj.isLiked = !targetTweetObj.isLiked
+    
+    localStorage.setItem("tweetsData", JSON.stringify(tweetsData) )
+    
     render()
 
-    /* localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) ) */
+    
 }
 
 function handleRetweetClick(tweetId){
@@ -55,9 +58,10 @@ function handleRetweetClick(tweetId){
         targetTweetObj.retweets++
     }
     targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
+    
+     localStorage.setItem("tweetsData", JSON.stringify(tweetsData) )
+    
     render() 
-
-    /* localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) ) */
 }
 
 function handleReplyClick(replyId){
@@ -72,10 +76,11 @@ function handleDeleteClick(deleteId){
     const index = tweetsData.indexOf(targetTweetObj);
     tweetsData.splice(index,1)
 
+     localStorage.setItem("tweetsData", JSON.stringify(tweetsData) )
+    
     render()
 
-    /* localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) ) */
-}
+    }
 
 function handleTweetBtnClick(){
     const tweetInput = document.getElementById('tweet-input')
@@ -95,7 +100,7 @@ function handleTweetBtnClick(){
     render()
     tweetInput.value = ''
         
-    /* localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) ) */
+     localStorage.setItem("tweetsData", JSON.stringify(tweetsData) )
         
     }
 
