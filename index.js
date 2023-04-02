@@ -40,7 +40,7 @@ function handleLikeClick(tweetId){
     targetTweetObj.isLiked = !targetTweetObj.isLiked
     render()
 
-    localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) )
+    /* localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) ) */
 }
 
 function handleRetweetClick(tweetId){
@@ -57,7 +57,7 @@ function handleRetweetClick(tweetId){
     targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
     render() 
 
-    localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) )
+    /* localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) ) */
 }
 
 function handleReplyClick(replyId){
@@ -74,7 +74,7 @@ function handleDeleteClick(deleteId){
 
     render()
 
-    localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) )
+    /* localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) ) */
 }
 
 function handleTweetBtnClick(){
@@ -94,7 +94,9 @@ function handleTweetBtnClick(){
         })
     render()
     tweetInput.value = ''
-    localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) )
+        
+    /* localStorage.setItem("tweetsLocalStorage", JSON.stringify(tweetsData) ) */
+        
     }
 
 }
